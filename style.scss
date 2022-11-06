@@ -1,0 +1,357 @@
+@import "nullstyle.scss";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+body{
+    font-family: 'Rubik', sans-serif;
+    padding-top: 45px;
+}
+
+header, .banner, .news, .notification, .self__advertising{
+    margin-bottom: 40px;
+}
+
+nav, .corona-info{
+    margin-bottom: 18px;
+}
+
+footer{
+    background: #295093;
+}
+
+.container{
+    max-width: 1230px;
+    padding: 0 15px;
+    margin: auto;
+    & .header-content{
+        @include flex(center);
+        &__link-logo{
+            padding: 10px 5px;
+            box-shadow: 0px 1px 1px lightgrey;
+            border-radius: 5px;
+            margin-right: 16px;
+        }
+        &__currency{
+            @include flex($cGap: 15px);
+            &__currency-block{
+                @include flex($cGap: 5px);
+            }
+            &__currency-block i{
+                color: #285193;
+        }
+        &__currency-block span{
+            @include font(16px, 400, 19px, none, #7a7a7a);
+        }
+
+        }
+        &__help{
+            flex-grow: 1;
+            @include flex($jContent: flex-end);
+            &__content{
+                @include flex(center, $cGap: 32px);
+                & form{
+                    display: flex;
+                    & img{
+                        cursor: pointer;
+                    }
+                    & .searchbox{
+                        transition: .4s linear;
+                        padding: 5px;
+                        width: 0px;
+                        &:focus{
+                            width: 150px;
+                        }
+                    }
+                    &:hover{
+                        box-shadow: 0px 0px 3px lightgray;
+                        padding: 0 5px;
+                    }
+                    &:hover .searchbox{
+                        width: 150px;
+                    }
+                    &:focus-within{
+                        box-shadow: 0px 0px 3px lightgray;
+                        padding: 0 5px;
+                    }
+                }
+                &__lang{
+                    @include flex(center, $cGap: 5px);
+                }
+                & .subscribe{
+                    @include flex(center, $cGap: 7px);
+                    @include font(16px, 500, 19px, none, #FFFFFF);
+                    background: linear-gradient(90deg, #1E96C8 15.07%, #37AEE2 85.96%);
+                    border-radius: 5px;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+    & .nav-content{
+        padding: 20px 25px;
+        box-shadow: 0px 1px 1px lightgrey;
+        border-radius: 5px;
+        @include flex($jContent: space-between);
+        &__link{
+            @include font(19px, 500, 22.52px, none, #515151);
+        }
+    }
+    & .banner__content {
+        border: 1px solid #E0E0E0;
+        & img{    
+            width: 100%;
+            height: 100%;
+        }
+    }
+    & .corona-info__content{
+        @include flex($jContent: space-between);
+        padding: 30px 35px;
+        background: #F6F6F9;
+        &__block{
+            @include flex(center);
+        }
+        &__block img{
+            margin-right: 20px;
+        }
+        &__block:first-child{
+            @include font(20px, 500, 23.7px, none, #000000);
+            width: 32%;
+            & h2{
+                margin-right: 67px;
+            }
+            &::after{
+                content: '';
+                width: 2px;
+                height: 75px;
+                background-color: red;
+            }
+        }
+        &__block:not(:first-child){
+            & h3{
+                @include font(18px, 400, 21.33px, none, inherit);
+            }
+            & span{
+                @include font(25px, 500, 29.63px, none, #000000);
+            }
+            & .infected{
+                color: #DB0000;
+            }
+            & .recovered{
+                color: #05B135;
+            }
+        }
+
+    }
+    & .news__content{
+        @include flex($jContent: center, $cGap: 20px, $rGap: 20px);
+        flex-wrap: wrap;
+        &__card{
+            width: 386px;
+            &-imgbox{
+                width: 100%;
+                height: 190px;
+                margin-bottom: 10px;
+                & img{
+                    width: 100%;
+                    height: 100%;
+                }
+                & picture{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            &-descr h3{
+                margin-bottom: 10px;
+                & a{
+                    @include font(17px, 500, 20.15px, none, inherit);
+                }
+            }
+            &-descr time{
+                @include font(14px, 400, 17px, none, #6b6d97);
+            }
+        }
+    }
+    & .notification__content{
+        background: rgba(239, 186, 84, 0.18);
+        border-radius: 5px;
+        padding: 28px 20px 28px 34px;
+        @include flex(center, space-between);
+        &__text{
+            @include flex(center, $cGap: 17px);
+            & span{
+                @include font(20px, 500, 20.7px, none, #000000);
+            }
+        }
+        &__btn{
+            padding: 10px;
+            border-radius: 5px;
+            @include font(20px, 500, 23.7px, none, #FFFFFF);
+            background: linear-gradient(90deg, #FE5C28 0%, rgba(255, 139, 54, 0.9) 88.43%);
+        }
+    }
+    & .last-popular-news__content{
+        @include flex($cGap: 20px);
+        margin-bottom: 38px;
+        & .last__news{
+            @include flex($fDirection: column);
+            min-width: 66.16%;
+            & h2{
+                @include font(20px, 500, 23.7px, none, #000000);
+                margin-bottom: 13px;
+            }
+            &__card{
+                @include flex(center, $cGap: 19px);
+                margin-bottom: 18px;
+                &__imgBox{
+                    min-width: 252px;
+                    height: 143px;
+                    & img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                &__descr{
+                    & .last__news__card__title{
+                        margin-bottom: 8px;
+                        & a{
+                        @include font(17px, 500, 20.15px, none, #000000);
+                    }
+                        
+                    }
+                    & .last__news__card__subtitle{
+                        @include font(15px, 400, 17.78px, none, #434343);
+                        margin-bottom: 12px;
+                    }
+                    & time {
+                        @include flex(center);
+                        @include font(14px, 400, 20px, none, #7688A4);
+                        &:before{
+                            content: '';
+                            width: 18px;
+                            height: 20px;
+                            background: url(./assets/icons/ic_outline-date-range.svg) no-repeat;
+                        }
+                    }
+                }
+            }
+            &__btn{
+                align-self: center;
+                padding: 10px 30px;
+                background: #295093;
+                border-radius: 5px;
+                @include font(17px, 500, 20px, none, #FFFFFF);
+            }
+            & .open__cards{
+                display: none;
+                transition: .2s linear;
+            }
+            #open:target{
+                display: block;
+            }
+        }
+        & aside{
+            flex-grow: 1;
+            & .aside__popular__news{
+                padding: 16px 20px;
+                background: #F6F6F9;
+                border-radius: 5px;
+                margin-bottom: 20px;
+                &__title{
+                    @include font(20px, 500, 24px, none, #202020);
+                    margin-bottom: 6px;
+                }
+                & ul li{
+                    padding-bottom: 14px;
+                    border-bottom: 4px solid #e4e4e4;
+                    & a{
+                        @include font(17px, 400, 20px, none, #202020);
+                    }
+                    & time{
+                        display: block;
+                        margin-top: 11px;
+                        @include font(14px, 400, 17px, none, #7688A4);
+                    }
+                }
+                & ul li:not(:last-child){
+                    margin-bottom: 18px;
+                }
+            }
+            & .aside__imgBox{
+                width: 100%;
+                height: 477px;
+                & img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    & .self__advertising__content{
+        background: #F6F6F9;
+        padding: 35px 20px 0px;
+        @include flex(center, space-between);
+        & .self__advertising__imgBox{
+            width: 236px;
+            height: 177px;
+            & img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        & .self__advertising__text{
+            &__title{
+                @include font(24px, 500, 28px, none, #295093);
+                margin-bottom: 10px;
+            }
+            &__subtitle{
+                @include font(18px, 500, 21px, none, #333333);
+            }
+        }
+        & .appblock{
+            @include flex($cGap: 19px);
+        }
+    }
+    & .footer__content{
+        & .footer__top{
+            padding: 15px 0px;
+            @include flex(center, space-between);
+            & .footer__logo__link{
+                margin-right: 198px;
+            }
+            &__subscribe{
+                @include flex(center, $cGap: 17px);
+                @include font(14px, 500, 16.59px, none, #FFFFFF);
+                & a{
+                    @include flex(center, $cGap: 6px);
+                    padding: 10px;
+                    background-color: #FFFFFF;
+                    border-radius: 5px;
+                }
+            }
+        }
+        hr{
+            display: block;
+            height: 3px;
+            background-color: #133C82;
+        }
+        & .footer__info{
+            padding: 12px 0px;
+            @include flex($cGap: 110px);
+            &__aboutSite{
+                max-width: 365px;
+                &__title{
+                    @include font(14px, 500, 16.59px, none, white);
+                    margin-bottom: 10px;
+                }
+                &__subtitle{
+                    @include font(14px, 400, 16.59px, none, white);
+                }
+            }
+            & ul li:not(:last-child){
+                margin-bottom: 10px;
+            }
+            & ul li a{
+                @include font(14px, 500, 16.59px, none, white);
+            }
+        }
+    }
+}

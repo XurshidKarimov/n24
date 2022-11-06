@@ -1,0 +1,68 @@
+@import "style.scss";
+
+body {
+    quotes: "«" "»";
+}
+
+#article__last__news{
+    min-width: 60%;
+}
+
+.last-popular-news__content{
+    margin-bottom: 0px;
+    & .last__news{
+        @include flex($fDirection: column);
+        &__title{
+            @include font(24px, 500, 28.44px, none, #000000);
+            margin-bottom: 15px;
+        }
+        & time {
+            @include flex(center);
+            @include font(14px, 400, 20px, none, #7688A4);
+            margin-bottom: 14px;
+            &:before{
+                content: '';
+                width: 18px;
+                height: 20px;
+                background: url(./assets/icons/ic_outline-date-range.svg) no-repeat;
+            }
+        }   
+        &__imgbox{
+            width: 100%;
+            height: 379px;
+            margin-bottom: 17px;
+            & img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &__content{
+            flex-grow: 1;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #EBEBEB;
+            &__subtitle{
+                @include font(18px, 500, 21.09px, none, #000000);
+            }
+            &__text ~ p:not(:last-child){
+                margin-bottom: 38px;
+                @include font(18px, 400, 21.09px, none, #000000);
+            }
+            p.citata{
+                font-weight: 500;
+                font-style: italic;
+            }
+            &__hashtag{
+                @include flex($cGap: 15px);
+                & span{
+                    color: #28508E;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.news__content__title{
+    @include font(20px, 500, 23.7px, none, #000000);
+    margin-bottom: 17px;
+}
